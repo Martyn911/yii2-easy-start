@@ -67,6 +67,13 @@ git clone https://github.com/martyn911/yii2-easy-start.git
 composer install
 ```
 
+### Get source code via Composer
+You can install this application template with `composer` using the following command:
+
+```
+composer create-project --prefer-dist --stability=dev martyn911/yii2-easy-start
+```
+
 ### Setup application
 1. Copy `.env.dist` to `.env` in the project root.
 2. Adjust settings in `.env` file
