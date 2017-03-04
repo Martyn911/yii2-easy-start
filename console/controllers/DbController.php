@@ -11,7 +11,7 @@ use yii\helpers\FileHelper;
 
 Class DbController extends Controller{
 
-    public function actionImport($path = false) {
+    public function actionImport($path = null) {
         if(!$path) {
             $path = Yii::getAlias('@runtime/dump.sql');
         }
