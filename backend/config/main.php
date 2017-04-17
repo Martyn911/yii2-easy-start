@@ -64,7 +64,8 @@ $config = [
         'view' => [
             'theme' => [
                 'pathMap' => [
-                    '@dektrium/user/views' => '@backend/views/user',
+                    '@dektrium/user/views/security' => '@common/modules/user/views/admin/auth',
+                    '@dektrium/user/views' => '@common/modules/user/views',
                 ],
             ],
         ],

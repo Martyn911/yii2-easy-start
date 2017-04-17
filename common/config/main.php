@@ -68,6 +68,7 @@ $config = [
                         'common'=>'common.php',
                         'backend'=>'backend.php',
                         'frontend'=>'frontend.php',
+                        'exuser' => 'exuser.php',
                     ],
                 ],
             ],
@@ -90,8 +91,22 @@ $config = [
             'admins' => ['admin'],
             'urlPrefix' => 'user',
             'debug' => false,
+            'controllerMap' => [
+                'profile' => 'common\modules\user\controllers\ProfileController'
+            ],
             'modelMap' => [
-                'RegistrationForm' => 'frontend\models\RegistrationForm',
+                'RegistrationForm' => 'common\modules\user\models\RegistrationForm',
+                'Profile' => 'common\modules\user\models\Profile',
+            ],
+            'urlRules' => [
+                //'<id:\d+>'                               => 'profile/show',
+                '<action:(login|logout|auth)>'           => 'security/<action>',
+                '<action:(register|resend)>'             => 'registration/<action>',
+                '<username:\w+>'                         => 'profile/show',
+                'confirm/<id:\d+>/<code:[A-Za-z0-9_-]+>' => 'registration/confirm',
+                'forgot'                                 => 'recovery/request',
+                'recover/<id:\d+>/<code:[A-Za-z0-9_-]+>' => 'recovery/reset',
+                'settings/<action:\w+>'                  => 'settings/<action>'
             ],
         ],
         'rbac' => 'dektrium\rbac\RbacWebModule',

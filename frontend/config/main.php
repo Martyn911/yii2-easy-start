@@ -19,7 +19,7 @@ $config = [
         'view' => [
             'theme' => [
                 'pathMap' => [
-                    '@dektrium/user/views' => '@frontend/views/user'
+                    '@dektrium/user/views' => '@common/modules/user/views',
                 ],
             ],
         ],

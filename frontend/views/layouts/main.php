@@ -69,7 +69,7 @@ AppAsset::register($this);
     $menuItems[] = [
         'label' => Yii::t('common', 'Language'),
         'items' => array_map(function ($code) {
-            $params = Yii::$app->requestedParams;
+            $params = Yii::$app->request->queryParams;
             array_unshift($params, '/' . Yii::$app->controller->route);
             $labels = [
                 'en' => Yii::t('common', 'English'),

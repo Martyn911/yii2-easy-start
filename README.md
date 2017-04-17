@@ -79,7 +79,7 @@ composer create-project --prefer-dist --stability=dev martyn911/yii2-easy-start
 2. Adjust settings in `.env` file
 	- Set debug mode and your current environment
 	```
-	YII_DEBUG   = truels
+	YII_DEBUG   = true
 	YII_ENV     = dev
 	```
 	- Set DB configuration
